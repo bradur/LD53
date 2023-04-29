@@ -11,13 +11,13 @@ TagManager:
   - 
   - Water
   - UI
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
+  - Tumbler
+  - TumblerStopper
+  - LockpickShaft
+  - LockpickContactTrigger
+  - LockpickStopper
+  - LockpickHead
+  - TumblerDetectorTrigger
   - 
   - 
   - 
