@@ -4,20 +4,45 @@ using UnityEngine;
 
 public class Lock : MonoBehaviour
 {
+    public static Lock main;
+    void Awake()
+    {
+        main = this;
+    }
     private List<TumblerDetector> tumblerDetectors;
 
     [SerializeField]
     private SpriteRenderer tumblerIndicator;
 
+    private Animator animator;
+
     void Start()
     {
+        animator = GetComponent<Animator>();
         tumblerDetectors = GetComponentsInChildren<TumblerDetector>().ToList();
-        Debug.Log(tumblerDetectors.Count);
+    }
+    public void PlayUnlockAnimation()
+    {
+        animator.Play("lockUnlock");
+    }
+
+    public void UnlockAnimationFinished()
+    {
+        UIManager.main.ShowNextLevelPopup();
     }
 
 
     void Update()
     {
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            Debug.Log("Win!");
+            GameManager.main.FinishLock();
+        }
+        if (GameManager.main.Paused)
+        {
+            return;
+        }
         bool unlocked = tumblerDetectors.All(tumblerDetector => !tumblerDetector.IsTumbled);
         if (!unlocked)
         {
@@ -25,10 +50,7 @@ public class Lock : MonoBehaviour
             return;
         }
         tumblerIndicator.color = Color.green;
-        if (Input.GetKeyDown(KeyCode.Space))
-        {
-            Debug.Log("Win!");
-        }
+
     }
 
 }

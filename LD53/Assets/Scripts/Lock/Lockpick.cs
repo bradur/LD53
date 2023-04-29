@@ -11,10 +11,14 @@ public class Lockpick : MonoBehaviour
     private float staticSpeed = 3f;
 
     [SerializeField]
-    private float slowSpeed = 1f;
+    private float gravity = 1f;
 
     [SerializeField]
-    private bool speedIsStatic = false;
+    private Transform floorPosition;
+    [SerializeField]
+    private Transform ceilingPosition;
+
+    private float velYBeforeCol = 0f;
 
     private Rigidbody2D rb2d;
     // Start is called before the first frame update
@@ -27,9 +31,7 @@ public class Lockpick : MonoBehaviour
     };
     private List<KeyCode> verticalKeys = new List<KeyCode>() {
         KeyCode.W,
-        KeyCode.S,
-        KeyCode.UpArrow,
-        KeyCode.DownArrow
+        KeyCode.UpArrow
     };
 
     void Start()
@@ -40,6 +42,10 @@ public class Lockpick : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (GameManager.main.Paused)
+        {
+            return;
+        }
         HandleMovement();
     }
 
@@ -47,61 +53,59 @@ public class Lockpick : MonoBehaviour
     {
         float horizontalAxis = Input.GetAxis("Horizontal");
         float verticalAxis = Input.GetAxis("Vertical");
-        Vector2 vel = CalculateVelocity(horizontalAxis, verticalAxis);
-        if (!InputHelper.GetAnyKey(horizontalKeys))
-        {
-            if (speedIsStatic)
-            {
-                vel.x = 0;
-            }
-            else
-            {
-                vel.x = Mathf.Lerp(vel.x, 0, 0.5f);
-            }
-        }
-        if (!InputHelper.GetAnyKey(verticalKeys))
-        {
-            if (speedIsStatic)
-            {
-                vel.y = 0;
-            }
-            else
-            {
-                vel.y = Mathf.Lerp(vel.y, 0, 0.5f);
-            }
-        }
+        Vector2 vel = CalculateVelocityFromInput(horizontalAxis, verticalAxis);
+        vel.y = CalculateGravity(vel.y);
+        vel = HandleSlowdown(vel, verticalAxis);
         rb2d.velocity = vel;
     }
 
-    private void ApplyMovementAsPosition(float x, float y)
+    private float CalculateGravity(float currentYVel)
     {
-        Vector3 pos = transform.position;
-        pos.x += x * horizontalSpeed * Time.deltaTime;
-        pos.y += y * verticalSpeed * Time.deltaTime;
-        transform.position = pos;
+        if (!InputHelper.GetAnyKey(verticalKeys) && transform.position.y > floorPosition.position.y)
+        {
+            return currentYVel -= gravity * Time.deltaTime;
+        }
+        return currentYVel;
     }
-    private Vector2 CalculateVelocity(float x, float y)
+
+    private Vector2 HandleSlowdown(Vector2 vel, float verticalAxis)
+    {
+        Vector2 newVel = new Vector2(vel.x, vel.y);
+        if (!InputHelper.GetAnyKey(horizontalKeys))
+        {
+            newVel.x = Mathf.Lerp(newVel.x, 0, 0.5f);
+        }
+        if (!InputHelper.GetAnyKey(verticalKeys) && verticalAxis > 0.001f)
+        {
+            newVel.y = Mathf.Lerp(newVel.y, 0, 0.5f);
+        }
+        return newVel;
+    }
+    private Vector2 CalculateVelocityFromInput(float x, float y)
     {
         Vector2 vel = rb2d.velocity;
-        if (speedIsStatic)
+
+        vel.x += x * horizontalSpeed * Time.deltaTime;
+        if (y > 0.001f && transform.position.y < ceilingPosition.position.y)
         {
-            float minInputForStatic = 0.001f;
-            if (Mathf.Abs(x) > minInputForStatic)
-            {
-                float dir = x > 0 ? 1 : -1;
-                vel.x = x * staticSpeed * horizontalSpeed * Time.deltaTime;
-            }
-            if (Mathf.Abs(y) > minInputForStatic)
-            {
-                float dir = y > 0 ? 1 : -1;
-                vel.y = y * staticSpeed * verticalSpeed * Time.deltaTime;
-            }
-        }
-        else
-        {
-            vel.x += x * horizontalSpeed * Time.deltaTime;
             vel.y += y * verticalSpeed * Time.deltaTime;
+            velYBeforeCol = vel.y;
         }
         return vel;
+    }
+
+    private void OnCollisionEnter2DFromChild(Collision2D collision)
+    {
+        //
+    }
+
+    private void OnTriggerEnter2DFromChild(Collider2D collider)
+    {
+        Tumbler tumbler = collider.GetComponentInParent<Tumbler>();
+        if (tumbler)
+        {
+            tumbler.Tumble(velYBeforeCol);
+            //            Debug.Log($"Bef: {velYBeforeCol} velY: {rb2d.velocity.y}");
+        }
     }
 }
