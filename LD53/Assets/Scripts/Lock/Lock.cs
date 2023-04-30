@@ -15,6 +15,7 @@ public class Lock : MonoBehaviour
     [SerializeField]
     private SpriteRenderer tumblerIndicator;
 
+
     private Animator animator;
 
     private List<KeyCode> openLockKeys = new List<KeyCode>() {
@@ -79,8 +80,10 @@ public class Lock : MonoBehaviour
         if (!unlocked)
         {
             tumblerIndicator.color = originalColor;
+            UIManager.main.HideUnlockText();
             return;
         }
+        UIManager.main.ShowUnlockText();
         tumblerIndicator.color = indicatorColor;
         if (InputHelper.GetAnyKeyDown(openLockKeys))
         {

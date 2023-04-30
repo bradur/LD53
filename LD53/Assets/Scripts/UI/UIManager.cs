@@ -27,6 +27,8 @@ public class UIManager : MonoBehaviour
     private UIPopupOptions theEndPopup;
     [SerializeField]
     private UIPopupOptions customerPopupNoItemsYet;
+    [SerializeField]
+    private GameObject unlockText;
 
     private void ShowPopup(UIPopupOptions options, UnityAction callback, string description = "", Sprite sprite = null)
     {
@@ -40,6 +42,16 @@ public class UIManager : MonoBehaviour
                 callback();
             }, description, sprite);
         }
+    }
+
+    public void ShowUnlockText()
+    {
+        unlockText.SetActive(true);
+    }
+    public void HideUnlockText()
+    {
+        unlockText.SetActive(false);
+
     }
 
     public void ShowTheEndPopup(UnityAction callback)

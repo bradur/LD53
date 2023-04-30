@@ -27020,7 +27020,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: -200
   m_Sprite: {fileID: 21300000, guid: e652c6b4ddfe15b4fad3e9c15e06e9b3, type: 3}
-  m_Color: {r: 1, g: 0.87068963, b: 0.5, a: 1}
+  m_Color: {r: 0.5019608, g: 0.9909002, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -30742,10 +30742,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 2883890224821659588, guid: 35544cbc3d52c94429d25965018fa64f, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 4672575340500014439, guid: 35544cbc3d52c94429d25965018fa64f, type: 3}
       propertyPath: m_Pivot.x
       value: 0
@@ -30829,79 +30825,6 @@ PrefabInstance:
     - target: {fileID: 4672575340500014439, guid: 35544cbc3d52c94429d25965018fa64f, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5097226473323075638, guid: 35544cbc3d52c94429d25965018fa64f, type: 3}
-      propertyPath: theEndPopup.Title
-      value: The end!
-      objectReference: {fileID: 0}
-    - target: {fileID: 5097226473323075638, guid: 35544cbc3d52c94429d25965018fa64f, type: 3}
-      propertyPath: theEndPopup.Description
-      value: You picked all the locks and made all the deliveries! Thanks for playing
-        :). You can keep jumping around if you like.
-      objectReference: {fileID: 0}
-    - target: {fileID: 5097226473323075638, guid: 35544cbc3d52c94429d25965018fa64f, type: 3}
-      propertyPath: customerPopup.Description
-      value: Delivery succesful!
-      objectReference: {fileID: 0}
-    - target: {fileID: 5097226473323075638, guid: 35544cbc3d52c94429d25965018fa64f, type: 3}
-      propertyPath: customerPopupNoItemsYet.Title
-      value: -Customer-
-      objectReference: {fileID: 0}
-    - target: {fileID: 5097226473323075638, guid: 35544cbc3d52c94429d25965018fa64f, type: 3}
-      propertyPath: theEndPopup.Buttons.Array.size
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 5097226473323075638, guid: 35544cbc3d52c94429d25965018fa64f, type: 3}
-      propertyPath: theEndPopup.Buttons.Array.data[0].Title
-      value: continue (enter)
-      objectReference: {fileID: 0}
-    - target: {fileID: 5097226473323075638, guid: 35544cbc3d52c94429d25965018fa64f, type: 3}
-      propertyPath: theEndPopup.Buttons.Array.data[1].Title
-      value: restart (R)
-      objectReference: {fileID: 0}
-    - target: {fileID: 5097226473323075638, guid: 35544cbc3d52c94429d25965018fa64f, type: 3}
-      propertyPath: theEndPopup.Buttons.Array.data[0].Action
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 5097226473323075638, guid: 35544cbc3d52c94429d25965018fa64f, type: 3}
-      propertyPath: theEndPopup.Buttons.Array.data[0].hotkey
-      value: 13
-      objectReference: {fileID: 0}
-    - target: {fileID: 5097226473323075638, guid: 35544cbc3d52c94429d25965018fa64f, type: 3}
-      propertyPath: theEndPopup.Buttons.Array.data[1].Action
-      value: 4
-      objectReference: {fileID: 0}
-    - target: {fileID: 5097226473323075638, guid: 35544cbc3d52c94429d25965018fa64f, type: 3}
-      propertyPath: theEndPopup.Buttons.Array.data[1].hotkey
-      value: 114
-      objectReference: {fileID: 0}
-    - target: {fileID: 5097226473323075638, guid: 35544cbc3d52c94429d25965018fa64f, type: 3}
-      propertyPath: customerPopupNoItemsYet.Buttons.Array.size
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5097226473323075638, guid: 35544cbc3d52c94429d25965018fa64f, type: 3}
-      propertyPath: customerPopupNoItemsYet.Buttons.Array.data[0].Title
-      value: continue (enter)
-      objectReference: {fileID: 0}
-    - target: {fileID: 5097226473323075638, guid: 35544cbc3d52c94429d25965018fa64f, type: 3}
-      propertyPath: customerPopupNoItemsYet.Buttons.Array.data[1].Title
-      value: restart r
-      objectReference: {fileID: 0}
-    - target: {fileID: 5097226473323075638, guid: 35544cbc3d52c94429d25965018fa64f, type: 3}
-      propertyPath: customerPopupNoItemsYet.Buttons.Array.data[0].Action
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 5097226473323075638, guid: 35544cbc3d52c94429d25965018fa64f, type: 3}
-      propertyPath: customerPopupNoItemsYet.Buttons.Array.data[0].hotkey
-      value: 13
-      objectReference: {fileID: 0}
-    - target: {fileID: 5097226473323075638, guid: 35544cbc3d52c94429d25965018fa64f, type: 3}
-      propertyPath: customerPopupNoItemsYet.Buttons.Array.data[1].Action
-      value: 4
-      objectReference: {fileID: 0}
-    - target: {fileID: 5097226473323075638, guid: 35544cbc3d52c94429d25965018fa64f, type: 3}
-      propertyPath: customerPopupNoItemsYet.Buttons.Array.data[1].hotkey
-      value: 114
       objectReference: {fileID: 0}
     - target: {fileID: 6079229738776859077, guid: 35544cbc3d52c94429d25965018fa64f, type: 3}
       propertyPath: m_Name
