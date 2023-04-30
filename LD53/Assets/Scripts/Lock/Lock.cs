@@ -10,11 +10,23 @@ public class Lock : MonoBehaviour
         main = this;
     }
     private List<TumblerDetector> tumblerDetectors;
+    private List<Tumbler> tumblers;
 
     [SerializeField]
     private SpriteRenderer tumblerIndicator;
 
     private Animator animator;
+
+    private List<KeyCode> openLockKeys = new List<KeyCode>() {
+        KeyCode.Space,
+        KeyCode.E
+    };
+
+    private List<KeyCode> tumblerLockKeys = new List<KeyCode>() {
+        KeyCode.LeftControl,
+        KeyCode.RightControl,
+        KeyCode.C
+    };
 
     [SerializeField]
     private Color indicatorColor;
@@ -25,6 +37,7 @@ public class Lock : MonoBehaviour
         originalColor = tumblerIndicator.color;
         animator = GetComponent<Animator>();
         tumblerDetectors = GetComponentsInChildren<TumblerDetector>().ToList();
+        tumblers = GetComponentsInChildren<Tumbler>().ToList();
     }
     public void PlayUnlockAnimation()
     {
@@ -50,6 +63,18 @@ public class Lock : MonoBehaviour
         {
             return;
         }
+        if (InputHelper.GetAnyKeyDown(tumblerLockKeys))
+        {
+            foreach (Tumbler tumbler in tumblers)
+            {
+                tumbler.ReleaseTop();
+            }
+            Tumbler topTumbler = tumblers.First(tumbler => tumbler.IsTopTumbled);
+            if (topTumbler != null)
+            {
+                topTumbler.LockTop();
+            }
+        }
         bool unlocked = tumblerDetectors.All(tumblerDetector => !tumblerDetector.IsTumbled);
         if (!unlocked)
         {
@@ -57,7 +82,7 @@ public class Lock : MonoBehaviour
             return;
         }
         tumblerIndicator.color = indicatorColor;
-        if (Input.GetKeyDown(KeyCode.Space))
+        if (InputHelper.GetAnyKeyDown(openLockKeys))
         {
             Debug.Log("Win!");
             SoundManager.main.PlaySound(GameSoundType.LockPullOpen);

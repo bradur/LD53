@@ -5,6 +5,8 @@ public class TumblerDetector : MonoBehaviour
 
     [SerializeField]
     private GameObject detectorTriggerTop;
+    [SerializeField]
+    private GameObject tumblerTriggertop;
 
     private bool isTumbled = true;
     public bool IsTumbled { get { return isTumbled; } }
@@ -24,5 +26,6 @@ public class TumblerDetector : MonoBehaviour
         float height = mainSprite.size.y;
         Vector3 oldPos = detectorTriggerTop.transform.localPosition;
         detectorTriggerTop.transform.localPosition = new Vector3(oldPos.x, height, oldPos.z);
+        tumblerTriggertop.transform.localPosition = new Vector3(oldPos.x, height, oldPos.z);
     }
 }

@@ -119,6 +119,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d75f724ebee32bb41a479940fcc35662, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  tumblerSr: {fileID: 7230256876422868036}
+  topColor: {r: 0, g: 1, b: 0.25, a: 1}
 --- !u!212 &7230256876422868036
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -184,9 +186,9 @@ Rigidbody2D:
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
   m_Mass: 0.5
-  m_LinearDrag: 1
+  m_LinearDrag: 0
   m_AngularDrag: 0.05
-  m_GravityScale: 0.3
+  m_GravityScale: 1
   m_Material: {fileID: 0}
   m_Interpolate: 2
   m_SleepingMode: 1

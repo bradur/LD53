@@ -66,9 +66,15 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Tap the tumblers with your lockpick. Use the <color=green>arrow keys /
-    WASD</color> to move the lockpick. When all tumblers are up press <color=green>SPACE</color>
-    to unlock the lock!
+  m_text: '- <color=green>Arrows / WASD</color>: move lockpick
+
+
+    - <color=green>CTRL
+    / C</color>: lock / release one tumbler up top when it turns green.
+
+
+    - <color=green>SPACE
+    / E</color>: unlock the lock when all tumblers are free.'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: f71b09524262aca4dbf4e576febedaa8, type: 2}
   m_sharedMaterial: {fileID: -4880967480388099869, guid: f71b09524262aca4dbf4e576febedaa8, type: 2}
@@ -95,14 +101,14 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 26.7
+  m_fontSize: 23.7
   m_fontSizeBase: 20
   m_fontWeight: 400
   m_enableAutoSizing: 1
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 1
-  m_HorizontalAlignment: 2
+  m_HorizontalAlignment: 1
   m_VerticalAlignment: 512
   m_textAlignment: 65535
   m_characterSpacing: 0
@@ -174,7 +180,7 @@ RectTransform:
   m_AnchorMin: {x: 1, y: 1}
   m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: -40, y: -80}
-  m_SizeDelta: {x: 400, y: 300}
+  m_SizeDelta: {x: 400, y: 400}
   m_Pivot: {x: 1, y: 1}
 --- !u!222 &5452241272765100876
 CanvasRenderer:
@@ -551,6 +557,10 @@ MonoBehaviour:
     - Title: continue (enter)
       hotkey: 13
       Action: 3
+  theEndPopup:
+    Title: 
+    Description: 
+    Buttons: []
   customerPopupNoItemsYet:
     Title: 
     Description: 
