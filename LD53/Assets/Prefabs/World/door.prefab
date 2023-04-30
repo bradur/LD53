@@ -127,6 +127,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   doorLock: {fileID: 0}
+  doorSr: {fileID: 2881876835102307538}
+  unlockedDoorSprite: {fileID: 21300000, guid: e07cbf2113da28f46aaaf6903c3baef0, type: 3}
   item: {fileID: 0}
   hoverItemContainer: {fileID: 4126469572563568960}
   hoverItemPrefab: {fileID: 7883952374384723172, guid: 023ed5804511cff4da3fa562c5473e38, type: 3}

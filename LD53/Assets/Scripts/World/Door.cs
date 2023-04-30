@@ -4,6 +4,10 @@ public class Door : MonoBehaviour
 {
     [SerializeField]
     private Lock doorLock;
+    [SerializeField]
+    private SpriteRenderer doorSr;
+    [SerializeField]
+    private Sprite unlockedDoorSprite;
 
     [SerializeField]
     private ItemConfig item;
@@ -36,6 +40,7 @@ public class Door : MonoBehaviour
     public void Unlock()
     {
         unlocked = true;
+        doorSr.sprite = unlockedDoorSprite;
         hoverItem.Remove();
     }
 }

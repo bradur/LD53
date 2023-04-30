@@ -11,10 +11,17 @@ public class Customer : MonoBehaviour
     private List<GameObject> activateAfterResolution;
     [SerializeField]
     private List<GameObject> deactivateAfterResolution;
+    [SerializeField]
+    private Transform itemContainer;
+    [SerializeField]
+    private HoverItem hoverItemPrefab;
 
     private bool isEnabled = true;
     [SerializeField]
     private bool isGameEnd = false;
+
+    [SerializeField]
+    private Animator animator;
 
     public bool RequirementsAreMet(List<ItemConfig> items)
     {
@@ -36,6 +43,9 @@ public class Customer : MonoBehaviour
         {
             deactivateObject.SetActive(false);
         }
+        HoverItem hoverItem = Instantiate(hoverItemPrefab, itemContainer);
+        hoverItem.Initialize(Requirements.Item);
+        animator.Play("customerHappy");
         if (isGameEnd)
         {
             GameManager.main.TheEnd();

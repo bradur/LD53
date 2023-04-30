@@ -49,7 +49,8 @@ public enum UIAction
     DoorOpened,
     ShowDoor,
     CloseDialog,
-    DeliveryMade
+    DeliveryMade,
+    Restart
 }
 
 [System.Serializable]
