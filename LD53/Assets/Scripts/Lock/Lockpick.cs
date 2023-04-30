@@ -61,7 +61,12 @@ public class Lockpick : MonoBehaviour
     {
         if (!InputHelper.GetAnyKey(verticalKeys) && transform.position.y > floorPosition.position.y)
         {
-            return currentYVel -= gravity * Time.deltaTime;
+            float newYvel = currentYVel - gravity * Time.deltaTime;
+            if (newYvel > 0)
+            {
+                newYvel = 0;
+            }
+            return newYvel;
         }
         return currentYVel;
     }

@@ -532,8 +532,7 @@ MonoBehaviour:
   uiPopupContainer: {fileID: 6268687412824007168}
   nextLevelPopup:
     Title: -Unlocked-
-    Description: You made it in the nick of time. Well done. Now deliver the goods
-      to the customer!
+    Description: Well done picking that lock! Now deliver the goods to the customer.
     Buttons:
     - Title: continue (enter)
       hotkey: 13
@@ -552,13 +551,10 @@ MonoBehaviour:
     - Title: continue (enter)
       hotkey: 13
       Action: 3
-  customerPopupFail:
-    Title: -Customer-
-    Description: You don't have what the customer wants!
-    Buttons:
-    - Title: continue (enter)
-      hotkey: 13
-      Action: 2
+  customerPopupNoItemsYet:
+    Title: 
+    Description: 
+    Buttons: []
 --- !u!1 &6894728965703200729
 GameObject:
   m_ObjectHideFlags: 0
