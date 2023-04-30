@@ -33,6 +33,7 @@ public class Lock : MonoBehaviour
 
     public void UnlockAnimationFinished()
     {
+        SoundManager.main.PlaySound(GameSoundType.DoorOpen);
         UIManager.main.ShowNextLevelPopup(delegate
         {
             //
@@ -59,6 +60,7 @@ public class Lock : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Space))
         {
             Debug.Log("Win!");
+            SoundManager.main.PlaySound(GameSoundType.LockPullOpen);
             GameManager.main.FinishLock();
         }
     }
