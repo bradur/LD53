@@ -74,6 +74,7 @@ public class PlayerMove : MonoBehaviour
 
             if (grounded && InputHelper.GetAnyKey(jumpKeys))
             {
+
                 allowJumping = true;
                 lingerTimer = -1f;
                 grounded = false;
@@ -125,6 +126,10 @@ public class PlayerMove : MonoBehaviour
             {
                 //anim.SetTrigger("Jump");
                 //rb2d.AddForce(new Vector2(0f, jumpForce));
+                if (rb2d.velocity.y < (jumpForce / 2f))
+                {
+                    SoundManager.main.PlaySound(GameSoundType.Jump);
+                }
                 newVelocity.y = jumpForce;
                 allowJumping = false;
             }

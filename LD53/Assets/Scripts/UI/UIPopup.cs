@@ -52,6 +52,7 @@ public class UIPopup : MonoBehaviour
             imgItem.sprite = sprite;
         }
 
+        SoundManager.main.PlaySound(GameSoundType.OpenDialog);
         animator = GetComponent<Animator>();
         animator.Play("popupShow");
     }

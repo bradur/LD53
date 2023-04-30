@@ -59,6 +59,10 @@ public class GameManager : MonoBehaviour
     {
         Pause();
         bool requirementsMet = customer.RequirementsAreMet(items);
+        if (requirementsMet)
+        {
+            SoundManager.main.PlaySound(GameSoundType.Success);
+        }
         UIManager.main.ShowCustomerPopup(delegate
         {
             Debug.Log($"Requirements: {requirementsMet}");

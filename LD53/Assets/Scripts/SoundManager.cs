@@ -60,7 +60,10 @@ public enum GameSoundType
     LockHit,
     LockBouncy,
     LockPullOpen,
-    DoorOpen
+    DoorOpen,
+    Success,
+    Jump,
+    OpenDialog
 }
 
 [System.Serializable]
