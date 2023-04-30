@@ -79,6 +79,7 @@ public class UIPopup : MonoBehaviour
         }
         GameManager.main.PerformUIAction(action);
         finishedCallback();
+        Destroy(gameObject);
     }
 }
 
