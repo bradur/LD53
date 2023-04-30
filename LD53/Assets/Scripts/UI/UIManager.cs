@@ -24,6 +24,8 @@ public class UIManager : MonoBehaviour
     [SerializeField]
     private UIPopupOptions customerPopup;
     [SerializeField]
+    private UIPopupOptions theEndPopup;
+    [SerializeField]
     private UIPopupOptions customerPopupNoItemsYet;
 
     private void ShowPopup(UIPopupOptions options, UnityAction callback, string description = "", Sprite sprite = null)
@@ -38,6 +40,11 @@ public class UIManager : MonoBehaviour
                 callback();
             }, description, sprite);
         }
+    }
+
+    public void ShowTheEndPopup(UnityAction callback)
+    {
+        ShowPopup(theEndPopup, callback);
     }
 
     public void ShowDoorPopup(UnityAction callback)

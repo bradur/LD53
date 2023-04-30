@@ -13,6 +13,8 @@ public class Customer : MonoBehaviour
     private List<GameObject> deactivateAfterResolution;
 
     private bool isEnabled = true;
+    [SerializeField]
+    private bool isGameEnd = false;
 
     public bool RequirementsAreMet(List<ItemConfig> items)
     {
@@ -33,6 +35,10 @@ public class Customer : MonoBehaviour
         foreach (GameObject deactivateObject in deactivateAfterResolution)
         {
             deactivateObject.SetActive(false);
+        }
+        if (isGameEnd)
+        {
+            GameManager.main.TheEnd();
         }
     }
 

@@ -96,6 +96,15 @@ public class GameManager : MonoBehaviour
         Lock.main.PlayUnlockAnimation();
     }
 
+    public void TheEnd()
+    {
+        Pause();
+        UIManager.main.ShowTheEndPopup(delegate
+        {
+            Debug.Log("The end!");
+        });
+    }
+
     public void UnlockAnimationFinished(Lock doorLock)
     {
         items.Add(currentDoor.Item);
