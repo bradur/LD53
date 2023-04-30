@@ -8,4 +8,8 @@ public class InputHelper
     {
         return keys.Any(key => Input.GetKey(key));
     }
+    public static bool GetAnyKeyDown(List<KeyCode> keys)
+    {
+        return keys.Any(key => Input.GetKeyDown(key));
+    }
 }

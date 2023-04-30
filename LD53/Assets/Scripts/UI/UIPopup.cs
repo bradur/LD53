@@ -2,6 +2,7 @@ using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 using UnityEngine.Events;
+using UnityEngine.UI;
 
 public class UIPopup : MonoBehaviour
 {
@@ -10,6 +11,10 @@ public class UIPopup : MonoBehaviour
 
     [SerializeField]
     private TextMeshProUGUI txtDescription;
+    [SerializeField]
+    private GameObject itemContainer;
+    [SerializeField]
+    private Image imgItem;
     [SerializeField]
     private UIButton uiButtonPrefab;
     [SerializeField]
@@ -24,7 +29,7 @@ public class UIPopup : MonoBehaviour
     private List<UIButton> buttons = new List<UIButton>();
 
     private UnityAction finishedCallback;
-    public void Initialize(UIPopupOptions options, UnityAction callback)
+    public void Initialize(UIPopupOptions options, UnityAction callback, string description = "", Sprite sprite = null)
     {
         finishedCallback = callback;
         this.options = options;
@@ -35,6 +40,16 @@ public class UIPopup : MonoBehaviour
             UIButton button = Instantiate(uiButtonPrefab, uiButtonContainer);
             button.Initialize(uIButtonOptions, PerformAction);
             buttons.Add(button);
+        }
+
+        if (description != "")
+        {
+            txtDescription.text = description;
+        }
+        if (sprite != null)
+        {
+            itemContainer.SetActive(true);
+            imgItem.sprite = sprite;
         }
 
         animator = GetComponent<Animator>();

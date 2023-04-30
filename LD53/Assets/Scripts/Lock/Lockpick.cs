@@ -7,8 +7,6 @@ public class Lockpick : MonoBehaviour
     private float horizontalSpeed = 1f;
     [SerializeField]
     private float verticalSpeed = 1f;
-    [SerializeField]
-    private float staticSpeed = 3f;
 
     [SerializeField]
     private float gravity = 1f;

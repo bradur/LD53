@@ -16,8 +16,13 @@ public class Lock : MonoBehaviour
 
     private Animator animator;
 
+    [SerializeField]
+    private Color indicatorColor;
+    private Color originalColor;
+
     void Start()
     {
+        originalColor = tumblerIndicator.color;
         animator = GetComponent<Animator>();
         tumblerDetectors = GetComponentsInChildren<TumblerDetector>().ToList();
     }
@@ -28,17 +33,18 @@ public class Lock : MonoBehaviour
 
     public void UnlockAnimationFinished()
     {
-        UIManager.main.ShowNextLevelPopup();
+        UIManager.main.ShowNextLevelPopup(delegate
+        {
+            //
+            Debug.Log("OPEN Next level!");
+            GameManager.main.UnlockAnimationFinished(this);
+        });
     }
 
 
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Space))
-        {
-            Debug.Log("Win!");
-            GameManager.main.FinishLock();
-        }
+
         if (GameManager.main.Paused)
         {
             return;
@@ -46,11 +52,15 @@ public class Lock : MonoBehaviour
         bool unlocked = tumblerDetectors.All(tumblerDetector => !tumblerDetector.IsTumbled);
         if (!unlocked)
         {
-            tumblerIndicator.color = Color.gray;
+            tumblerIndicator.color = originalColor;
             return;
         }
-        tumblerIndicator.color = Color.green;
-
+        tumblerIndicator.color = indicatorColor;
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            Debug.Log("Win!");
+            GameManager.main.FinishLock();
+        }
     }
 
 }

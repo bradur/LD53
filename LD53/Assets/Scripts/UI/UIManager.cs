@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.Events;
 
 public class UIManager : MonoBehaviour
 {
@@ -15,10 +16,17 @@ public class UIManager : MonoBehaviour
 
     private bool canShowPopup = true;
 
+
     [SerializeField]
     private UIPopupOptions nextLevelPopup;
+    [SerializeField]
+    private UIPopupOptions doorPopup;
+    [SerializeField]
+    private UIPopupOptions customerPopup;
+    [SerializeField]
+    private UIPopupOptions customerPopupNoItemsYet;
 
-    private void ShowPopup(UIPopupOptions options)
+    private void ShowPopup(UIPopupOptions options, UnityAction callback, string description = "", Sprite sprite = null)
     {
         if (canShowPopup)
         {
@@ -27,12 +35,32 @@ public class UIManager : MonoBehaviour
             popup.Initialize(options, delegate
             {
                 canShowPopup = true;
-            });
+                callback();
+            }, description, sprite);
         }
     }
 
-    public void ShowNextLevelPopup()
+    public void ShowDoorPopup(UnityAction callback)
     {
-        ShowPopup(nextLevelPopup);
+        ShowPopup(doorPopup, callback);
     }
+    public void ShowCustomerPopup(UnityAction callback, bool requirementsMet, Customer customer)
+    {
+        if (requirementsMet)
+        {
+
+            ShowPopup(customerPopup, callback, customer.Requirements.Resolution);
+        }
+        else
+        {
+
+            ShowPopup(customerPopupNoItemsYet, callback, customer.Requirements.Description, customer.Requirements.Item.Sprite);
+        }
+    }
+
+    public void ShowNextLevelPopup(UnityAction callback)
+    {
+        ShowPopup(nextLevelPopup, callback);
+    }
+
 }

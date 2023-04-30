@@ -46,7 +46,10 @@ public class UIButton : MonoBehaviour
 
 public enum UIAction
 {
-    NextLevel
+    DoorOpened,
+    ShowDoor,
+    CloseDialog,
+    DeliveryMade
 }
 
 [System.Serializable]
