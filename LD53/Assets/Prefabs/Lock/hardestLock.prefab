@@ -348,12 +348,12 @@ CapsuleCollider2D:
   m_GameObject: {fileID: 5829118781084545435}
   m_Enabled: 1
   m_Density: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: 308236d46081f28429c713c247504753, type: 2}
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0.00000023841858}
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 1, y: 0.5}
   m_Direction: 1
 --- !u!1 &5851770056217702003
 GameObject:
@@ -449,12 +449,12 @@ CapsuleCollider2D:
   m_GameObject: {fileID: 5851770056217702003}
   m_Enabled: 1
   m_Density: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: 308236d46081f28429c713c247504753, type: 2}
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0.00000047683716, y: 0}
-  m_Size: {x: 1.8216354, y: 1}
+  m_Size: {x: 1.8216354, y: 0.5}
   m_Direction: 1
 --- !u!1 &6260653699218738141
 GameObject:
@@ -550,12 +550,12 @@ CapsuleCollider2D:
   m_GameObject: {fileID: 6260653699218738141}
   m_Enabled: 1
   m_Density: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: 308236d46081f28429c713c247504753, type: 2}
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: -0.000000059604645, y: 0}
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 1, y: 0.5}
   m_Direction: 1
 --- !u!1 &7042083056171669352
 GameObject:
@@ -684,12 +684,12 @@ CapsuleCollider2D:
   m_GameObject: {fileID: 7103279164311139979}
   m_Enabled: 1
   m_Density: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: 308236d46081f28429c713c247504753, type: 2}
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
-  m_Size: {x: 2.34, y: 1}
+  m_Size: {x: 2.34, y: 0.5}
   m_Direction: 1
 --- !u!1 &7483367484071943666
 GameObject:
@@ -1487,7 +1487,6 @@ GameObject:
   m_Component:
   - component: {fileID: 7483367485455871526}
   - component: {fileID: 7483367485455871524}
-  - component: {fileID: 32634307196177948}
   - component: {fileID: 7745388940748028390}
   m_Layer: 10
   m_Name: stopper1to2
@@ -1563,32 +1562,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!61 &32634307196177948
-BoxCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7483367485455871529}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 5.12, y: 5.12}
-    newSize: {x: 1, y: 1}
-    adaptiveTilingThreshold: 0.5
-    drawMode: 1
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 1, y: 1}
-  m_EdgeRadius: 0
 --- !u!70 &7745388940748028390
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -1598,12 +1571,12 @@ CapsuleCollider2D:
   m_GameObject: {fileID: 7483367485455871529}
   m_Enabled: 1
   m_Density: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: 308236d46081f28429c713c247504753, type: 2}
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: -0.000000059604645, y: 0}
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 1, y: 0.5}
   m_Direction: 1
 --- !u!1 &7483367485509345598
 GameObject:

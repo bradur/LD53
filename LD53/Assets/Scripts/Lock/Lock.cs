@@ -69,7 +69,7 @@ public class Lock : MonoBehaviour
             {
                 tumbler.ReleaseTop();
             }
-            Tumbler topTumbler = tumblers.First(tumbler => tumbler.IsTopTumbled);
+            Tumbler topTumbler = tumblers.FirstOrDefault(tumbler => tumbler.IsTopTumbled);
             if (topTumbler != null)
             {
                 topTumbler.LockTop();

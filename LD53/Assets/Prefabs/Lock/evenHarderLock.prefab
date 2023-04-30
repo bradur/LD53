@@ -127,12 +127,12 @@ CapsuleCollider2D:
   m_GameObject: {fileID: 1403659657348463375}
   m_Enabled: 1
   m_Density: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: 308236d46081f28429c713c247504753, type: 2}
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
-  m_Size: {x: 2.34, y: 1}
+  m_Size: {x: 2.34, y: 0.5}
   m_Direction: 1
 --- !u!1 &1599733147994994948
 GameObject:
@@ -765,12 +765,12 @@ CapsuleCollider2D:
   m_GameObject: {fileID: 1599733149153223597}
   m_Enabled: 1
   m_Density: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: 308236d46081f28429c713c247504753, type: 2}
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: -0.000000059604645, y: 0}
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 1, y: 0.5}
   m_Direction: 1
 --- !u!1 &1599733149188814072
 GameObject:
@@ -1501,12 +1501,12 @@ CapsuleCollider2D:
   m_GameObject: {fileID: 2367923747096126455}
   m_Enabled: 1
   m_Density: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: 308236d46081f28429c713c247504753, type: 2}
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0.00000047683716, y: 0}
-  m_Size: {x: 1.8216354, y: 1}
+  m_Size: {x: 1.8216354, y: 0.5}
   m_Direction: 1
 --- !u!1 &2381304017493294111
 GameObject:
@@ -1602,12 +1602,12 @@ CapsuleCollider2D:
   m_GameObject: {fileID: 2381304017493294111}
   m_Enabled: 1
   m_Density: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: 308236d46081f28429c713c247504753, type: 2}
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0.00000023841858}
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 1, y: 0.5}
   m_Direction: 1
 --- !u!1 &2813457398148417113
 GameObject:
@@ -1703,12 +1703,12 @@ CapsuleCollider2D:
   m_GameObject: {fileID: 2813457398148417113}
   m_Enabled: 1
   m_Density: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: 308236d46081f28429c713c247504753, type: 2}
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: -0.000000059604645, y: 0}
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 1, y: 0.5}
   m_Direction: 1
 --- !u!1 &3680010756375609848
 GameObject:
